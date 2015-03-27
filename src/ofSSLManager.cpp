@@ -82,8 +82,10 @@ void ofSSLManager::initializeClient(Poco::Net::Context::Ptr pContext)
 
         Poco::Net::Context::Ptr _pContext = new Poco::Net::Context(Poco::Net::Context::CLIENT_USE,
                                                                    caLocation);
+        
+        Poco::SharedPtr<Poco::Net::InvalidCertificateHandler> pAcceptCertHandler = new Poco::Net::AcceptCertificateHandler(true);
 
-        Poco::Net::SSLManager::instance().initializeClient(0, 0, _pContext);
+        Poco::Net::SSLManager::instance().initializeClient(0, pAcceptCertHandler, _pContext);
         manager._clientContextInitialized = true;
     }
 }

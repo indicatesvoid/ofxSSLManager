@@ -36,6 +36,7 @@
 #include "Poco/Net/NetSSL.h"
 #include "Poco/Net/PrivateKeyPassphraseHandler.h"
 #include "Poco/Net/InvalidCertificateHandler.h"
+#include "Poco/Net/AcceptCertificateHandler.h"
 #include "Poco/Net/SSLManager.h"
 #include "ofUtils.h"
 #include "ofEvents.h"
